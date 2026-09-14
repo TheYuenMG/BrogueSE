@@ -41,8 +41,8 @@
 // out-of-sync; a PATCH bump does NOT reject them (reserved for replay-safe changes). Bump MINOR whenever a
 // release changes how a seed+inputs evolve. 0.12.0 "C is for Curses" is "SE 2.2.0": MINOR 1->2 (cursed-runics
 // + the Altars of Divination change level generation), rejecting 0.11.0 "B is for Balance" ("SE 2.1.0") saves.
-#define BROGUE_MAJOR 2
-#define BROGUE_MINOR 3
+#define BROGUE_MAJOR 1
+#define BROGUE_MINOR 16
 #define BROGUE_PATCH 0
 
 // Expanding a macro as a string constant requires two levels of macros
