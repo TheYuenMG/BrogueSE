@@ -1156,20 +1156,22 @@ static void getDefaultFilePath(char *defaultPath, boolean gameOver) {
     }
 
     if (!gameOver) {
-        sprintf(defaultPath, "Saved %s #%s at depth %d", gameConst->recordingVersionString, seed, rogue.depthLevel);
+        sprintf(defaultPath, "SAVE - %s, Seed %s, Depth %d", gameConst->recordingVersionString, seed, rogue.depthLevel);
     } else if (rogue.quit) {
-        sprintf(defaultPath, "%s #%s Quit at depth %d", gameConst->recordingVersionString, seed, rogue.depthLevel);
+        sprintf(defaultPath, "QUIT - %s, Seed %s, Depth %d", gameConst->recordingVersionString, seed, rogue.depthLevel);
     } else if (player.bookkeepingFlags & MB_IS_DYING) {
-        sprintf(defaultPath, "%s #%s Died at depth %d", gameConst->recordingVersionString, seed, rogue.depthLevel);
+        sprintf(defaultPath, "DEFEAT - %s, Seed %s, Depth %d", gameConst->recordingVersionString, seed, rogue.depthLevel);
     } else if (rogue.depthLevel > 26) {
-        sprintf(defaultPath, "%s #%s Mastered the dungeons", gameConst->recordingVersionString, seed);
+        sprintf(defaultPath, "MASTERY - %s, Seed %s, Depth 40", gameConst->recordingVersionString, seed);
     } else {
-        sprintf(defaultPath, "%s #%s Escaped the dungeons", gameConst->recordingVersionString, seed);
+        sprintf(defaultPath, "ESCAPE - %s, Seed %s, Win!", gameConst->recordingVersionString, seed);
     }
     if (rogue.mode == GAME_MODE_WIZARD) {
-        strcat(defaultPath, " (wizard)");
+        strcat(defaultPath, ", Wizard Mode");
     } else if (rogue.mode == GAME_MODE_EASY) {
-        strcat(defaultPath, " (easy)");
+        strcat(defaultPath, ", Easy Mode");
+    } else {
+        strcat(defaultPath, ", Normal Mode");
     }
 }
 
