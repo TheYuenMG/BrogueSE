@@ -41,6 +41,15 @@
 // out-of-sync; a PATCH bump does NOT reject them (reserved for replay-safe changes). Bump MINOR whenever a
 // release changes how a seed+inputs evolve. 0.12.0 "C is for Curses" is "SE 2.2.0": MINOR 1->2 (cursed-runics
 // + the Altars of Divination change level generation), rejecting 0.11.0 "B is for Balance" ("SE 2.1.0") saves.
+
+// Fuck this shit, just continue from CE 1.15.1 like a normal Brogue variant
+
+// *** Brogue Version Number TL;DR ***
+// MAJOR - Bump at the heat death of the universe (like Minecraft)
+// MINOR - Bump if the update breaks old saved games
+// PATCH - Bump if old saved games can still be played
+// And for the love of Prakerore, YOU DO NOT NEED TWO VERSION NUMBERS.
+
 #define BROGUE_MAJOR 1
 #define BROGUE_MINOR 16
 #define BROGUE_PATCH 0
