@@ -1054,7 +1054,7 @@ const char *mainMenuTitle_Brogue =
 // off the menu's right edge. This is DISPLAY ONLY: save/recording compatibility is governed by
 // BROGUE_RECORDING_VERSION_STRING / BROGUE_PATCH_VERSION_PATTERN below (still "SE <major>.<minor>.<patch>"),
 // so SE and CE saves can never alias regardless of what the title shows.
-#define BROGUE_VERSION_STRING "C is for Curses 0.12.2 "
+#define BROGUE_VERSION_STRING "1.16 - D is for \"Damn, Bitch, Fix Your Recordings!\" "
 
 // Recording version. Saved into recordings and save files made by this version.
 // Cannot be longer than 16 chars
@@ -1136,7 +1136,7 @@ const gameConstants brogueGameConst = {
     .numberMeteredItems = sizeof(meteredItemsGenerationTable_Brogue) / sizeof(meteredItemGenerationTable),
     .numberHordes = sizeof(hordeCatalog_Brogue) / sizeof(hordeType),
     .numberFeats = sizeof(featTable_Brogue) / sizeof(feat),
-    .companionFeatRequiredXP = 10400, // about 13 depths
+    .companionFeatRequiredXP = 10000,
 
     .mainMenuTitleHeight = MENU_TITLE_HEIGHT,
     .mainMenuTitleWidth = MENU_TITLE_WIDTH
