@@ -86,8 +86,12 @@ objects += $(sources:.c=.o)
 include make/*.mk
 .DEFAULT_GOAL := bin/brogue$(.exe)
 
+.PHONY : clean
 clean:
 	$(warning 'make clean' is no longer needed in many situations, so is not supported. Use 'make -B' to force rebuild something.)
+	$(warning fuck you yes it is)
+	rm -f $(objects)
+	@echo clean done
 
 escape = $(subst ','\'',$(1))
 vars:
