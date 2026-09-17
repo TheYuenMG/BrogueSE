@@ -1,5 +1,36 @@
-Brogue SE — Desktop
-===================
+Brogue SE
+=========
+
+> *There once was an adventurer named Trish  
+> Who played NetHack and dipped for a wish.  
+> Her ass met the hand  
+> Of a blue ampersand,  
+> But she'd still play that train wreck over this.*
+>
+> ***Welcome to the Dungeons of Doom. Buckle up, Rodney.***
+
+*Brogue SE* is a traditional roguelike variant by Seth Howard, based on Brogue:
+Community Edition maintained by Tom Mewett. This repository is a fork of Brogue
+SE by Otis Yuen.
+
+Introduction
+------------
+
+Brogue SE is a single-player dungeon-crawling video game about an adventurer
+exploring a randomly-generated dungeon called the Dungeons of Doom. The
+objective is to travel through 26 levels to get an artifact called the Amulet
+of Yendor. Along the way, the adventurer will face many dangers, and they must
+defeat monsters and avoid traps to survive. However, the Dungeons also contain
+many items, equipment, and treasures to help the adventurer on their quest.
+In fact, some experienced adventurers have reported the existence of side
+puzzles and challenges, with great rewards for those wise enough to solve them.
+Some have even returned with stories of unlikely friendships with the creatures
+from the Dungeon. With everything on the line, and one wrong step potentially
+spelling permanent death, do you have what it takes to bring the Amulet to the
+light of day once more?
+
+Platform information
+--------------------
 
 Desktop (Windows / Linux) builds of **Brogue SE**, the firehose fork of Brogue CE
 that lives in the iOS/iPadOS/macOS app. This repo is a thin **desktop platform
