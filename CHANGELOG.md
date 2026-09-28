@@ -11,6 +11,26 @@ listed separately under [Desktop port](#desktop-port) at the end.
 
 ---
 
+## 1.16 — D is for "Damn, Bitch, Fix Your Recordings!"
+
+*"Oh, I wouldn't say 'fixed.' More like 'under new management.'"*
+
+### Changes
+- Fixed default recording file name using the internal version string
+- Changed formatting of default recording file name
+  - Files are now named "{STATUS} - {version}, Seed {seed}, Depth {depth}, {mode} Mode.broguesave" by default
+  - {STATUS} is game result, one of "SAVE," "QUIT," "DEFEAT," "MASTERY," or "ESCAPE"
+  - {depth} is 40 for masteries, "Depth {depth}" is replaced with "Win!" for escapes
+  - Example: "SAVE - SE 1.16.0, Seed 694201488, Depth 11, Easy Mode.broguesave"
+- Changed version numbering system to closer resemble Brogue CE's
+  - Minor for save-breaking changes and patch for save-compatible changes
+  - Continues numbering from CE 1.15.1
+
+### Buffs
+- Companion feat now only requires 10000 exploration experience, down from 10400
+
+---
+
 ## 0.12.3 — Reward-room fix
 
 *Keeps altar and treasure rooms from handing you a downgrade.*
