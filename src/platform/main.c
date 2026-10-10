@@ -106,13 +106,13 @@ int main(int argc, char *argv[])
     rogue.nextGamePath[0] = '\0';
     rogue.nextGameSeed = 0;
     rogue.mode = GAME_MODE_NORMAL;
-    rogue.displayStealthRangeMode = false;
-    rogue.trueColorMode = false;
+    rogue.displayStealthRangeMode = true;
+    rogue.trueColorMode = true;
 
     // Brogue SE keyboard layout. Desktop defaults to the MODERN u/i/o-j/k/l grid;
     // a choice persisted from a previous run (or --keys below) overrides it, and it
     // can be toggled in-game from the help screen ('?' then TAB). (CLASSIC = vi-keys.)
-    rogueKeyboardScheme = KEYBOARD_SCHEME_MODERN;
+    rogueKeyboardScheme = KEYBOARD_SCHEME_CLASSIC;
     {
         int persistedScheme = seLoadPersistedKeyboardScheme();
         if (persistedScheme >= 0) {
