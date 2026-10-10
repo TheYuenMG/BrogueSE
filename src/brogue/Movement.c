@@ -2364,11 +2364,20 @@ void updateFieldOfViewDisplay(boolean updateDancingTerrain, boolean refreshDispl
                         }
                     }
                     if (!(pmap[i][j].flags & MAGIC_MAPPED)
-                        && cellHasTMFlag((pos){ i, j }, TM_INTERRUPT_EXPLORATION_WHEN_SEEN)) {
-
-                        strcpy(name, tileCatalog[pmap[i][j].layers[layerWithTMFlag(i, j, TM_INTERRUPT_EXPLORATION_WHEN_SEEN)]].description);
-                        sprintf(buf, "you see %s.", name);
-                        messageWithColor(buf, &backgroundMessageColor, 0);
+                        && cellHasTMFlag((pos){i, j}, TM_INTERRUPT_EXPLORATION_WHEN_SEEN))
+                    {
+                        strcpy(name, tileCatalog[pmap[i][j].layers[layerWithTMFlag(
+                                   i, j, TM_INTERRUPT_EXPLORATION_WHEN_SEEN)]].description);
+                        if (cellHasTMFlag((pos){i, j}, TM_AMULET_OF_YENDOR))
+                        {
+                            sprintf(buf, "you see... *GASP* the AMULET OF YENDOR!");
+                            messageWithColor(buf, &itemMessageColor, 0);
+                        }
+                        else
+                        {
+                            sprintf(buf, "you see %s.", name);
+                            messageWithColor(buf, &backgroundMessageColor, 0);
+                        }
                     }
                 }
                 discoverCell(i, j);
