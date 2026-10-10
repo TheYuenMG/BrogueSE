@@ -557,7 +557,11 @@ const floorTileType tileCatalog[NUMBER_TILETYPES] = {
  /*ANCIENT_SPIRIT_GRASS*/       {G_GRASS,   &grassColor,            0,                  60, 15, DF_PLAIN_FIRE,0,0,                          0,  NO_LIGHT,       (T_IS_FLAMMABLE), (TM_STAND_IN_TILE),                                                               "a tuft of grass",      "tufts of lush grass have improbably pushed upward through the stone ground."},
 
  // Yendor amulet floor tile
- /*AMULET_SWITCH*/              {G_FLOOR,   &floorForeColor,        &floorBackColor,    95, 0,  DF_PLAIN_FIRE,0,0,                          0,  NO_LIGHT,       0, (TM_VANISHES_UPON_PROMOTION | TM_IS_WIRED | TM_PROMOTES_ON_ITEM_PICKUP),                         "the ground",           ""},
+ /*AMULET_SWITCH*/
+ {
+     G_FLOOR, &floorForeColor, &floorBackColor, 95, 0, DF_PLAIN_FIRE, 0, 0, 0, NO_LIGHT, 0,
+     (TM_VANISHES_UPON_PROMOTION | TM_IS_WIRED | TM_PROMOTES_ON_ITEM_PICKUP | TM_AMULET_OF_YENDOR), "the ground", ""
+ },
 
  // commutation device          char        fore color              back color        prio ign% [fire,discover,promote]Type     promoteChance   glowLight       flags mechflags                                                                                     description             flavorText
  /*COMMUTATION_ALTAR*/         {G_ORB_ALTAR,&altarForeColor,       &greenAltarBackColor,17, 0,  0,0,DF_ALTAR_COMMUTE,                       0,  NO_LIGHT,       (T_OBSTRUCTS_SURFACE_EFFECTS), (TM_VANISHES_UPON_PROMOTION | TM_IS_WIRED | TM_SWAP_ENCHANTS_ACTIVATION | TM_LIST_IN_SIDEBAR | TM_VISUALLY_DISTINCT),    "a commutation altar",  "crude diagrams on this altar and its twin invite you to place items upon them."},
