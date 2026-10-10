@@ -2653,38 +2653,53 @@ enum terrainFlagCatalog {
     T_RESPIRATION_IMMUNITIES        = (T_CAUSES_DAMAGE | T_CAUSES_CONFUSION | T_CAUSES_PARALYSIS | T_CAUSES_NAUSEA),
 };
 
-enum terrainMechanicalFlagCatalog {
-    TM_IS_SECRET                    = Fl(0),        // successful search or being stepped on while visible transforms it into discoverType
-    TM_PROMOTES_WITH_KEY            = Fl(1),        // promotes if the key is present on the tile (in your pack, carried by monster, or lying on the ground)
-    TM_PROMOTES_WITHOUT_KEY         = Fl(2),        // promotes if the key is NOT present on the tile (in your pack, carried by monster, or lying on the ground)
-    TM_PROMOTES_ON_CREATURE         = Fl(3),        // promotes when a creature or player is on the tile (whether or not levitating)
-    TM_PROMOTES_ON_ITEM             = Fl(4),        // promotes when an item is on the tile
-    TM_PROMOTES_ON_ITEM_PICKUP      = Fl(5),        // promotes when an item is lifted from the tile (primarily for altars)
-    TM_PROMOTES_ON_PLAYER_ENTRY     = Fl(6),        // promotes when the player enters the tile (whether or not levitating)
-    TM_PROMOTES_ON_SACRIFICE_ENTRY  = Fl(7),        // promotes when the sacrifice target enters the tile (whether or not levitating)
-    TM_PROMOTES_ON_ELECTRICITY      = Fl(8),        // promotes when hit by a lightning bolt
-    TM_ALLOWS_SUBMERGING            = Fl(9),        // allows submersible monsters to submerge in this terrain
-    TM_IS_WIRED                     = Fl(10),        // if wired, promotes when powered, and sends power when promoting
-    TM_IS_CIRCUIT_BREAKER           = Fl(11),       // prevents power from circulating in its machine
-    TM_GAS_DISSIPATES               = Fl(12),       // does not just hang in the air forever
-    TM_GAS_DISSIPATES_QUICKLY       = Fl(13),       // dissipates quickly
-    TM_EXTINGUISHES_FIRE            = Fl(14),       // extinguishes burning terrain or creatures
-    TM_VANISHES_UPON_PROMOTION      = Fl(15),       // vanishes when creating promotion dungeon feature, even if the replacement terrain priority doesn't require it
-    TM_REFLECTS_BOLTS               = Fl(16),       // magic bolts reflect off of its surface randomly (similar to pmap flag IMPREGNABLE)
-    TM_STAND_IN_TILE                = Fl(17),       // earthbound creatures will be said to stand "in" the tile, not on it
-    TM_LIST_IN_SIDEBAR              = Fl(18),       // terrain will be listed in the sidebar with a description of the terrain type
-    TM_VISUALLY_DISTINCT            = Fl(19),       // terrain will be color-adjusted if necessary so the character stands out from the background
-    TM_BRIGHT_MEMORY                = Fl(20),       // no blue fade when this tile is out of sight
-    TM_EXPLOSIVE_PROMOTE            = Fl(21),       // when burned, will promote to promoteType instead of burningType if surrounded by tiles with T_IS_FIRE or TM_EXPLOSIVE_PROMOTE
-    TM_CONNECTS_LEVEL               = Fl(22),       // will be treated as passable for purposes of calculating level connectedness, irrespective of other aspects of this terrain layer
-    TM_INTERRUPT_EXPLORATION_WHEN_SEEN = Fl(23),    // will generate a message when discovered during exploration to interrupt exploration
-    TM_INVERT_WHEN_HIGHLIGHTED      = Fl(24),       // will flip fore and back colors when highlighted with pathing
-    TM_SWAP_ENCHANTS_ACTIVATION     = Fl(25),       // in machine, swap item enchantments when two suitable items are on this terrain, and activate the machine when that happens
-    TM_INSIGHT_ACTIVATION           = Fl(26),       // iOS port (iBrogue): in machine, when the insight + payment altars both hold items, reveal the insight item and consume the payment, then activate
-    TM_TRANSFER_ENCHANT_ACTIVATION  = Fl(27),       // iOS port (iBrogue): in machine, when the donor + recipient altars both hold items, pour the donor's enchantment into the recipient, consume the donor, then activate
-    TM_DIVINATION_ACTIVATION        = Fl(28),       // iOS port (Brogue SE): an active divination altar -- when it holds an unidentified item, identify it, arm the altar, and roll the statue's awaken (see performDivination)
+enum terrainMechanicalFlagCatalog
+{
+    TM_IS_SECRET = Fl(0), // successful search or being stepped on while visible transforms it into discoverType
+    TM_PROMOTES_WITH_KEY = Fl(1),
+    // promotes if the key is present on the tile (in your pack, carried by monster, or lying on the ground)
+    TM_PROMOTES_WITHOUT_KEY = Fl(2),
+    // promotes if the key is NOT present on the tile (in your pack, carried by monster, or lying on the ground)
+    TM_PROMOTES_ON_CREATURE = Fl(3), // promotes when a creature or player is on the tile (whether or not levitating)
+    TM_PROMOTES_ON_ITEM = Fl(4), // promotes when an item is on the tile
+    TM_PROMOTES_ON_ITEM_PICKUP = Fl(5), // promotes when an item is lifted from the tile (primarily for altars)
+    TM_PROMOTES_ON_PLAYER_ENTRY = Fl(6), // promotes when the player enters the tile (whether or not levitating)
+    TM_PROMOTES_ON_SACRIFICE_ENTRY = Fl(7),
+    // promotes when the sacrifice target enters the tile (whether or not levitating)
+    TM_PROMOTES_ON_ELECTRICITY = Fl(8), // promotes when hit by a lightning bolt
+    TM_ALLOWS_SUBMERGING = Fl(9), // allows submersible monsters to submerge in this terrain
+    TM_IS_WIRED = Fl(10), // if wired, promotes when powered, and sends power when promoting
+    TM_IS_CIRCUIT_BREAKER = Fl(11), // prevents power from circulating in its machine
+    TM_GAS_DISSIPATES = Fl(12), // does not just hang in the air forever
+    TM_GAS_DISSIPATES_QUICKLY = Fl(13), // dissipates quickly
+    TM_EXTINGUISHES_FIRE = Fl(14), // extinguishes burning terrain or creatures
+    TM_VANISHES_UPON_PROMOTION = Fl(15),
+    // vanishes when creating promotion dungeon feature, even if the replacement terrain priority doesn't require it
+    TM_REFLECTS_BOLTS = Fl(16), // magic bolts reflect off of its surface randomly (similar to pmap flag IMPREGNABLE)
+    TM_STAND_IN_TILE = Fl(17), // earthbound creatures will be said to stand "in" the tile, not on it
+    TM_LIST_IN_SIDEBAR = Fl(18), // terrain will be listed in the sidebar with a description of the terrain type
+    TM_VISUALLY_DISTINCT = Fl(19),
+    // terrain will be color-adjusted if necessary so the character stands out from the background
+    TM_BRIGHT_MEMORY = Fl(20), // no blue fade when this tile is out of sight
+    TM_EXPLOSIVE_PROMOTE = Fl(21),
+    // when burned, will promote to promoteType instead of burningType if surrounded by tiles with T_IS_FIRE or TM_EXPLOSIVE_PROMOTE
+    TM_CONNECTS_LEVEL = Fl(22),
+    // will be treated as passable for purposes of calculating level connectedness, irrespective of other aspects of this terrain layer
+    TM_INTERRUPT_EXPLORATION_WHEN_SEEN = Fl(23),
+    // will generate a message when discovered during exploration to interrupt exploration
+    TM_INVERT_WHEN_HIGHLIGHTED = Fl(24), // will flip fore and back colors when highlighted with pathing
+    TM_SWAP_ENCHANTS_ACTIVATION = Fl(25),
+    // in machine, swap item enchantments when two suitable items are on this terrain, and activate the machine when that happens
+    TM_INSIGHT_ACTIVATION = Fl(26),
+    // iOS port (iBrogue): in machine, when the insight + payment altars both hold items, reveal the insight item and consume the payment, then activate
+    TM_TRANSFER_ENCHANT_ACTIVATION = Fl(27),
+    // iOS port (iBrogue): in machine, when the donor + recipient altars both hold items, pour the donor's enchantment into the recipient, consume the donor, then activate
+    TM_DIVINATION_ACTIVATION = Fl(28),
+    // iOS port (Brogue SE): an active divination altar -- when it holds an unidentified item, identify it, arm the altar, and roll the statue's awaken (see performDivination)
 
-    TM_PROMOTES_ON_STEP             = (TM_PROMOTES_ON_CREATURE | TM_PROMOTES_ON_ITEM),
+    TM_AMULET_OF_YENDOR = (TM_INTERRUPT_EXPLORATION_WHEN_SEEN | Fl(29)),
+    // displays a special message when interrupting exploration
+    TM_PROMOTES_ON_STEP = (TM_PROMOTES_ON_CREATURE | TM_PROMOTES_ON_ITEM),
 };
 
 enum statusEffects {
